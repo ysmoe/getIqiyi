@@ -40,34 +40,41 @@ namespace getIqiyi
 
         private void getClick(object sender, RoutedEventArgs e)
         {
-            try
+            if (String.IsNullOrEmpty(playUrl.Text))
             {
-                playUrlString = playUrl.Text;
-                playUrlByte = Encoding.UTF8.GetBytes(playUrlString);
-                HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(new Uri(playUrlString));
-                getRequest.CookieContainer = new CookieContainer();
-                getRequest.Method = "GET";
-                getRequest.Accept = "text/html, application/xhtml+xml, */*";
-                getRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko";
-                HttpWebResponse getResponse = (HttpWebResponse)getRequest.GetResponse();
-                getResponseStreamReader = new StreamReader(getResponse.GetResponseStream(), Encoding.UTF8);
-                recvString = getResponseStreamReader.ReadToEnd();
-                getResponseStreamReader.Close();
-                getResponse.Close();
-                Match videoId = Regex.Match(recvString, @"data-player-videoid=.(.*)..");
-                string vid = videoId.Groups[1].Value;
-                Match videoTvid = Regex.Match(recvString, @"data-player-tvid=.(.*)..");
-                string tvid = videoTvid.Groups[1].Value;
-                Match albumId = Regex.Match(recvString, @"data-player-albumid=.(.*)..");
-                string aid = albumId.Groups[1].Value;
-                Match swf = Regex.Match(playUrlString, @"http://www.iqiyi.com/(.*).....#");
-                string swfName = swf.Groups[1].Value;
-                flashUrlString = "http://player.video.qiyi.com/" + vid + "/0/0/" + swfName + ".swf-ismember=false-albumId=" + aid + "-tvId=" + tvid + "-isPurchase=0-cnId=4";
-                flashUrl.Text = flashUrlString;
+                MessageBox.Show("不要恶意卖萌的说~", "请检查URL", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
-            catch (Exception netException)
+            else
             {
-                MessageBox.Show(netException.Message);
+                try
+                {
+                    playUrlString = playUrl.Text;
+                    playUrlByte = Encoding.UTF8.GetBytes(playUrlString);
+                    HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(new Uri(playUrlString));
+                    getRequest.CookieContainer = new CookieContainer();
+                    getRequest.Method = "GET";
+                    getRequest.Accept = "text/html, application/xhtml+xml, */*";
+                    getRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko";
+                    HttpWebResponse getResponse = (HttpWebResponse)getRequest.GetResponse();
+                    getResponseStreamReader = new StreamReader(getResponse.GetResponseStream(), Encoding.UTF8);
+                    recvString = getResponseStreamReader.ReadToEnd();
+                    getResponseStreamReader.Close();
+                    getResponse.Close();
+                    Match videoId = Regex.Match(recvString, @"data-player-videoid=.(.*)..");
+                    string vid = videoId.Groups[1].Value;
+                    Match videoTvid = Regex.Match(recvString, @"data-player-tvid=.(.*)..");
+                    string tvid = videoTvid.Groups[1].Value;
+                    Match albumId = Regex.Match(recvString, @"data-player-albumid=.(.*)..");
+                    string aid = albumId.Groups[1].Value;
+                    Match swf = Regex.Match(playUrlString, @"http://www.iqiyi.com/(.*).....#");
+                    string swfName = swf.Groups[1].Value;
+                    flashUrlString = "http://player.video.qiyi.com/" + vid + "/0/0/" + swfName + ".swf-ismember=false-albumId=" + aid + "-tvId=" + tvid + "-isPurchase=0-cnId=4";
+                    flashUrl.Text = flashUrlString;
+                }
+                catch (Exception netException)
+                {
+                    MessageBox.Show(netException.Message);
+                }
             }
         }
 

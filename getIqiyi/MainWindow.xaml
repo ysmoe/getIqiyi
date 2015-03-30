@@ -9,15 +9,15 @@
         <TextBox x:Name="playUrl" HorizontalAlignment="Left" Height="28" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="417" ToolTip="就是看新番的时候地址栏里的东西喵~" Opacity="0.5"/>
         <TextBox x:Name="flashUrl" HorizontalAlignment="Left" Height="114" Margin="10,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="497" IsReadOnly="True" ToolTip="复制之后就能用的喵~" Opacity="0.5"/>
         <Button x:Name="getButton" Content="Go！" HorizontalAlignment="Left" Margin="432,83,0,0" VerticalAlignment="Top" Width="75" Click="getClick" Height="28" ToolTip="准备好了？开始了喵~" Opacity="0.5"/>
-        <Label Content="视频播放地址输进这里哟~" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Width="183"/>
-        <Label Content="输出的Flash地址~" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="183"/>
+        <Label Content="视频播放地址输进这里哟~" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Width="183" Opacity="0.5"/>
+        <Label Content="输出的Flash地址~" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="183" Opacity="0.5"/>
         <Button x:Name="copyButton" Content="复制" HorizontalAlignment="Left" Margin="352,265,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="copyButtonClick" ToolTip="复制到剪贴板里的呢~" Opacity="0.5"/>
         <Button x:Name="clearButton" Content="清除" HorizontalAlignment="Left" Margin="432,265,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="clearButtonClick" ToolTip="确定喵？真的？" Opacity="0.5"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="说明：本工具是爱奇艺未显示分享Flash链接时的备用解决方案。将视频网址粘贴至下框，取得视频的Flash地址。！请不要调戏她！" VerticalAlignment="Top" Height="43" Width="417"/>
-        <Label Content="作者：" HorizontalAlignment="Left" Margin="10,284,0,0" VerticalAlignment="Top" Width="41"/>
-        <TextBlock HorizontalAlignment="Left" Margin="51,289,0,0" TextWrapping="Wrap" Text="@imi415_" VerticalAlignment="Top" Height="20" ToolTip="Twitter~">
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="说明：本工具是爱奇艺未显示分享Flash链接时的备用解决方案。将视频网址粘贴至下框，取得视频的Flash地址。！请不要调戏她！" VerticalAlignment="Top" Height="43" Width="417" Opacity="0.5"/>
+        <Label Content="作者：" HorizontalAlignment="Left" Margin="10,284,0,0" VerticalAlignment="Top" Width="41" Opacity="0.5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="51,289,0,0" TextWrapping="Wrap" Text="@imi415_" VerticalAlignment="Top" Height="20" ToolTip="Twitter~" Opacity="0.5">
         </TextBlock>
-        <Label Content="Background：© GMO INTERNET GROUP" HorizontalAlignment="Left" Margin="341,288,0,0" VerticalAlignment="Top" FontSize="8"/>
+        <Label Content="Background：© GMO INTERNET GROUP" HorizontalAlignment="Left" Margin="341,288,0,0" VerticalAlignment="Top" FontSize="8" Opacity="0.5"/>
 
     </Grid>
 </Window>
