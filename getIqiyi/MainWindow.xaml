@@ -14,9 +14,10 @@
         <Button x:Name="copyButton" Content="复制" HorizontalAlignment="Left" Margin="351,280,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="copyButtonClick" ToolTip="复制到剪贴板里的呢~" Opacity="0.65"/>
         <Button x:Name="clearButton" Content="清除" HorizontalAlignment="Left" Margin="431,280,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="clearButtonClick" ToolTip="确定喵？真的？" Opacity="0.65"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="497"><Run Text="说明：本工具是"/><Run Text="部分视频站"/><Run Text=""/><Run Text="未显示分享Flash链接时的备用解决方案。"/><Run Text="选择视频源，"/><Run Text="将视频网址粘贴至下框，取得视频的Flash地址。！请不要调戏她！"/></TextBlock>
-        <RadioButton x:Name="chooseIqiyi" Content="爱奇艺" HorizontalAlignment="Left" Margin="9,49,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="choosePptv" Content="PPTV" HorizontalAlignment="Left" Margin="88,49,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="aboutButton" Content="关于" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="aboutButtonClick" Opacity="0.65"/>
+        <RadioButton x:Name="chooseIqiyi" Content="爱奇艺" HorizontalAlignment="Left" Margin="95,54,0,0" VerticalAlignment="Top" ToolTip="爱奇艺的视频源点这个"/>
+        <RadioButton x:Name="choosePptv" Content="PPTV" HorizontalAlignment="Left" Margin="174,54,0,0" VerticalAlignment="Top" ToolTip="PPTV的视频源点这个"/>
+        <Button x:Name="aboutButton" Content="关于" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="aboutButtonClick" Opacity="0.65" ToolTip="传说中的Credit"/>
+        <Label Content="选择视频源：" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
