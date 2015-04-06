@@ -47,11 +47,18 @@ namespace getIqiyi
             }
             else if(chooseIqiyi.IsChecked == true)
             {
+                IsGetButtonClicked(true);
                 sendGetIqiyi();
             }
             else if(choosePptv.IsChecked == true)
             {
+                IsGetButtonClicked(true);
                 sendGetPptv();
+            }
+            else if(chooseBiliBili.IsChecked == true)
+            {
+                IsGetButtonClicked(true);
+                sendGetBiliBili();
             }
             else
             {
@@ -126,9 +133,65 @@ namespace getIqiyi
                 MessageBox.Show(netException.Message);
             }
         }
+
+        public void sendGetBiliBili()
+        {
+            Match animeId = Regex.Match(playUrlString, @"av(.*)");
+            string aid = animeId.Groups[1].Value;
+            flashUrlString = "http://static.hdslb.com/play.swf?&aid=" + aid;
+            flashUrl.Text = flashUrlString;
+        }
+
         private void aboutButtonClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("作者 : imi415@U2 \nTwitter : @imi415_ \n软件更新 : https://github.com/imi415/getIqiyi \n软件主页 : https://blog.imi.moe/?p=251 \n本工具以MIT协议开源 \nBackground : © GMO INTERNET GROUP", "关于", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+        }
+
+        private void chooseBiliBiliChecked(object sender, RoutedEventArgs e)
+        {
+            IsvideoSourceChecked(true);
+            IsGetButtonClicked(false);
+            urlLabel.Content = "请输入B站AV号（包含“av”）";
+        }
+
+        private void chooseIqiyiChecked(object sender, RoutedEventArgs e)
+        {
+            IsvideoSourceChecked(true);
+            IsGetButtonClicked(false);
+            urlLabel.Content = "视频播放地址输进这里哟~";
+        }
+
+        private void choosePptvChecked(object sender, RoutedEventArgs e)
+        {
+            IsvideoSourceChecked(true);
+            IsGetButtonClicked(false);
+            urlLabel.Content = "视频播放地址输进这里哟~";
+        }
+        public void IsvideoSourceChecked(bool IsChecked)
+        {
+            if (IsChecked == true)
+            {
+                playUrl.Visibility = System.Windows.Visibility.Visible;
+                urlLabel.Visibility = System.Windows.Visibility.Visible;
+                getButton.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+        public void IsGetButtonClicked(bool IsClicked)
+        {
+            if (IsClicked == true)
+            {
+                flashUrl.Visibility = System.Windows.Visibility.Visible;
+                flashLabel.Visibility = System.Windows.Visibility.Visible;
+                copyButton.Visibility = System.Windows.Visibility.Visible;
+                clearButton.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                flashUrl.Visibility = System.Windows.Visibility.Hidden;
+                flashLabel.Visibility = System.Windows.Visibility.Hidden;
+                copyButton.Visibility = System.Windows.Visibility.Hidden;
+                clearButton.Visibility = System.Windows.Visibility.Hidden;
+            }
         }
     }
 }
