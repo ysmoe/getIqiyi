@@ -128,7 +128,7 @@ namespace getIqiyi
         }
         private void aboutButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("作者 : imi415@U2 \nTwitter : @imi415_ \n软件更新 : https://github.com/imi415/getIqiyi \n软件主页 : https://blog.imi.moe/?p=251 ", "关于", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            MessageBox.Show("作者 : imi415@U2 \nTwitter : @imi415_ \n软件更新 : https://github.com/imi415/getIqiyi \n软件主页 : https://blog.imi.moe/?p=251 \n本工具以MIT协议开源", "关于", MessageBoxButton.OK, MessageBoxImage.Asterisk);
         }
     }
 }
