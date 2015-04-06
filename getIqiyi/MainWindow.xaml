@@ -1,7 +1,7 @@
 ﻿<Window x:Class="getIqiyi.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="爱奇艺Flash地址提取器-Bidiu后台专用版-v1.2" Height="352.667" Width="522.667" Icon="/resources/favicon.png" Background="{x:Null}">
+        Title="爱奇艺Flash地址提取器-Bidiu后台专用版-v1.2" Height="352.667" Width="522.667" Icon="/resources/favicon.png" Background="{x:Null}" ResizeMode="CanMinimize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/resources/anzu_768_1024.jpg"/>
